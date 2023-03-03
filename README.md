@@ -1,0 +1,1 @@
+My solutions to Launch School JavaScript Exercises https://launchschool.com/
