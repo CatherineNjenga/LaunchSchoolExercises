@@ -70,3 +70,74 @@ function tipCalc() {
 }
 
 tipCalc();
+
+function sumOrProduct() {
+  // Input: number, output: number, explicit req: number greater than 0, sum/product of all numbers between 1 and the number exclusive
+  // implicit req: , data structure: number, algorithm: ask for a number above 0, ask if to get the sum/product result
+  // of the numbers between including the limit, log to the console the sum/product
+  let rlSync = require("readline-sync");
+  let limit = Number(rlSync.question("Please enter an integer greater than 0: "));
+  let operation = rlSync.question("Enter 's' to compute the sum, or 'p' to compute the product. ");
+  let sum = 0, product = 1;
+  if (operation === "s") {
+    for (let i = 1; i <= limit; i += 1) {
+      sum += i;
+    }
+    console.log(`The sum of the integers between 1 and ${limit} is ${sum}`);
+  } else if (operation === "p") {
+    for (let i = 1; i <= limit; i += 1) {
+      product *= i;
+    }
+    console.log(`The product of the integers between 1 and ${limit} is ${product}`);
+  }
+}
+
+sumOrProduct();
+
+function shortLongShort(strA, strB) {
+  // Input: string A, string B, output: returns string, explicit req: strings are of different lengths,
+  // data structure: strings, algorithm: determine the lengths of the input strings, if the shorter string, start with it
+  // then concatenate the longer string, then the shorter string, return resulting the string
+  let lengthA = strA.length;
+  let lengthB = strB.length;
+  if (lengthA < lengthB) {
+    return `${strA}${strB}${strA}`;
+  } else {
+    return `${strB}${strA}${strB}`;
+  }
+}
+
+console.log(shortLongShort('abc', 'defgh'));
+console.log(shortLongShort('abcde', 'fgh'));
+console.log(shortLongShort('', 'xyz'));
+
+function isLeapYear(year) {
+  // Input: number, output: boolean, explicit req: year greater than 0, implicit req: data structure:
+  // algorithm: determine if year is evenly divisible by 4, if divisible by 4 and divisible by 100 not a leap year
+  // if divisible by 100 not a leap year, if divisible by 100 and divisible by 400 it is a leap year
+  if (year % 4 === 0) {
+    if (year % 100 === 0) {
+      return false;
+    } else {
+      return true;
+    }
+  } else if (year % 100 === 0) {
+    if (year % 400 === 0) {
+      return true;
+    } else {
+      return true;
+    }
+  }
+}
+console.log(isLeapYear(2016));
+console.log(isLeapYear(2015));
+console.log(isLeapYear(2100));
+console.log(isLeapYear(2400));
+console.log(isLeapYear(240000));
+console.log(isLeapYear(240001));
+console.log(isLeapYear(2000));
+console.log(isLeapYear(1900));
+console.log(isLeapYear(1752));
+console.log(isLeapYear(1));
+console.log(isLeapYear(100));
+console.log(isLeapYear(400));
