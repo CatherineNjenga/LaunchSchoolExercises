@@ -1,1 +1,1 @@
-My solutions to Launch School JavaScript Exercises https://launchschool.com/
+My solutions to [Launch School](https://launchschool.com/) JavaScript Exercises 
