@@ -94,3 +94,59 @@ function penultimate(str) {
 // Examples
 console.log(penultimate("last word") === "last"); // logs true
 console.log(penultimate("Launch School is great!") === "is"); // logs true
+
+// Exclusive or
+function xor(el1, el2) {
+  // Input: two separate elements of any primitive data type, output: boolean, implicit req: use the triple equal comparison for a boolean
+  // value instead of a truthy/falsy values return, explicit req: return a boolean value
+  // data structure: , algorithm: 
+  if (el1 && el2) {
+    return false;
+  } else if (el1) {
+    return true;
+  } else if (el2) {
+    return true;
+  } else {
+    return false
+  }
+}
+
+// Examples
+console.log(xor(5, 0) === true);  // true
+console.log(xor(false, true) === true); // true
+console.log(xor(2, 1) === false); // true
+console.log(xor(true, true) === false); //true
+
+function oddities(arr) {
+  // Input: array, output: array, explicit req: returned array contains elements on the odd index position of original array
+  // data structure-array, algorithm: loop through the original array, identify the elements in the odd-numbered index of the array
+  // append/push the elements to a new array, return the new array
+  return arr.map(element => {
+    if (arr.indexOf(element) % 2 === 0) {
+      return element;
+    }
+  }).filter(element => {
+    return element !== undefined;
+  })
+}
+
+// Examples
+console.log(oddities([2, 3, 4, 5, 6])); // logs [2, 4, 6]
+console.log(oddities([1, 2, 3, 4, 5, 6]));  // logs [1, 2, 3]
+console.log(oddities(["abc", "def"]));  // logs ['abc']
+console.log(oddities([123])); // logs [123]
+console.log(oddities([]));  // logs []
+
+function randomAge() {
+  // Input: ,output: string, explicit req: a random number between 20 and 120(inclusive),
+  // data structure, algorithm:
+  let age = Math.random() * 121;
+  if (age >= 20) {
+    console.log(age);
+  } else {
+    age = Math.random() * 121; 
+  }
+   
+}
+
+randomAge();
